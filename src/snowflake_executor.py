@@ -12,6 +12,11 @@ class SnowflakeExecutor:
     def _establish_connection(self):
         """Establish connection to Snowflake using environment variables"""
         try:
+            print(os.getenv('SNOWFLAKE_ACCOUNT'))
+            print(os.getenv('SNOWFLAKE_USER'))
+            print(os.getenv('SNOWFLAKE_WAREHOUSE'))
+            print(os.getenv('SNOWFLAKE_DATABASE'))
+            print(os.getenv('SNOWFLAKE_SCHEMA'))
             return connector.connect(
                 account=os.getenv('SNOWFLAKE_ACCOUNT'),
                 user=os.getenv('SNOWFLAKE_USER'),
@@ -78,9 +83,11 @@ def main():
 
     # Load the appropriate environment file based on the database type
     if args.database_type.lower() == 'snowflake':
-        load_dotenv('snowflake.env')
+        load_dotenv('./src/snowflake.env')
+        print("Loaded snowflake.env")
     elif args.database_type.lower() == 'databricks':
-        load_dotenv('databricks.env')
+        load_dotenv('./src/databricks.env')
+        print("Loaded databricks.env")
     else:
         print("Unsupported database type. Please specify either 'Snowflake' or 'Databricks'.")
         return
