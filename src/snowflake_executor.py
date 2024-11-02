@@ -13,10 +13,6 @@ class SnowflakeExecutor:
         """Establish connection to Snowflake using environment variables"""
         try:
             print(os.getenv('SNOWFLAKE_ACCOUNT'))
-            print(os.getenv('SNOWFLAKE_USER'))
-            print(os.getenv('SNOWFLAKE_WAREHOUSE'))
-            print(os.getenv('SNOWFLAKE_DATABASE'))
-            print(os.getenv('SNOWFLAKE_SCHEMA'))
             return connector.connect(
                 account=os.getenv('SNOWFLAKE_ACCOUNT'),
                 user=os.getenv('SNOWFLAKE_USER'),
