@@ -7,7 +7,12 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+
+To run the package, you can use the following command:
+
+```bash
 python src/snowflake_executor.py ./sql_queries/Query-CM-SF.sql ./sql_queries/Query-SF-Array.sql ./sql_queries/Query-10-PL-SQL.sql snowflake
+```
 
 ### Arguments
 - The first argument is the path to the first SQL file.
