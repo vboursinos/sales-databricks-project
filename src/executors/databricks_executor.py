@@ -11,8 +11,6 @@ class DatabricksExecutor:
         """Establish connection to Databricks using environment variables"""
         try:
             print(os.getenv('DATABRICKS_SERVER_HOSTNAME'))
-            print(os.getenv('DATABRICKS_HTTP_PATH'))
-            print(os.getenv('DATABRICKS_ACCESS_TOKEN'))
             return sql.connect(
                 server_hostname=os.getenv('DATABRICKS_SERVER_HOSTNAME'),
                 http_path=os.getenv('DATABRICKS_HTTP_PATH'),
