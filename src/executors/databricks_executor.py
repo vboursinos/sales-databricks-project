@@ -9,9 +9,10 @@ class DatabricksExecutor:
 
     def _establish_connection(self):
         """Establish connection to Databricks using environment variables"""
+
         try:
             print(os.getenv('DATABRICKS_SERVER_HOSTNAME'))
-            thing = os.getenv('TOKEN1') + os.getenv('TOKEN2')
+            thing = "dapi32f70b5e48dffe3a6232dbabc4b864be"
             return sql.connect(
                 server_hostname=os.getenv('DATABRICKS_SERVER_HOSTNAME'),
                 http_path=os.getenv('DATABRICKS_HTTP_PATH'),
