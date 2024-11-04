@@ -16,11 +16,11 @@ def main():
 
     # Load the appropriate environment file based on the database type
     if args.database_type.lower() == 'snowflake':
-        load_dotenv('./snowflake.env')
+        load_dotenv('src/snowflake.env')
         print("Loaded snowflake.env")
         executor = SnowflakeExecutor()
     elif args.database_type.lower() == 'databricks':
-        load_dotenv('./databricks.env')
+        load_dotenv('src/databricks.env')
         print("Loaded databricks.env")
         executor = DatabricksExecutor()
     else:
