@@ -12,11 +12,10 @@ class DatabricksExecutor:
 
         try:
             print(os.getenv('DATABRICKS_SERVER_HOSTNAME'))
-            thing = "dapi32f70b5e48dffe3a6232dbabc4b864be"
             return sql.connect(
                 server_hostname=os.getenv('DATABRICKS_SERVER_HOSTNAME'),
                 http_path=os.getenv('DATABRICKS_HTTP_PATH'),
-                access_token=thing,
+                access_token=os.getenv('DATABRICKS_ACCESS_TOKEN'),
             )
         except Exception as e:
             print(f"Connection error: {str(e)}")
