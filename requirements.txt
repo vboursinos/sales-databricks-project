@@ -1,2 +1,3 @@
 snowflake
 python-dotenv
+databricks-sql-connector
