@@ -3,7 +3,7 @@ import argparse
 from dotenv import load_dotenv
 
 from executors.databricks_executor import DatabricksExecutor
-from executors.snowflake2_executor import SnowflakeExecutor
+from executors.snowflake_executor import SnowflakeExecutor
 
 
 def main():
