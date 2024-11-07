@@ -36,7 +36,7 @@ class DatabricksExecutor:
         except Exception as e:
             error_message = f"Error executing {description}: {str(e)}"
             print(error_message)
-            raise RuntimeError(error_message)  # Raise an exception instead of returning None
+            # raise RuntimeError(error_message)  # Raise an exception instead of returning None
         finally:
             if cursor:
                 cursor.close()
@@ -59,7 +59,7 @@ class DatabricksExecutor:
         except Exception as e:
             error_message = f"Error processing file {file_path}: {str(e)}"
             print(error_message)
-            raise RuntimeError(error_message)  # Raise an exception if file processing fails
+            # raise RuntimeError(error_message)  # Raise an exception if file processing fails
 
     def execute_sql_files(self, sql_file_names):
         """Execute a list of SQL files, raising an exception if any file fails"""
